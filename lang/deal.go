@@ -1,14 +1,14 @@
 package main
 
-import "fmt"
+
 func (deck*Deck)deal(player[]* Player,result *Result,  data*DataCard){
     
    for i:=0;i<result.Person;i++{// 对手发牌
     index:=deck.nextCard(2)
     player[i].Hand=append(player[i].Hand,index...)
-    fmt.Println(player[i].Hand)
+    
    }
-   fmt.Println(len(deck.Cards))
+   
    if len(data.PublicCard)>0 {
     deck.Hands = append(deck.Hands,data.PublicCard...)
   }
@@ -24,7 +24,7 @@ func (deck*Deck)deal(player[]* Player,result *Result,  data*DataCard){
       player[i].Hand=append(player[i].Hand,public...)
       } 
       
-      bug(deck.Cards,player)
+      bug(deck.Hands,player)
  }
 
    
