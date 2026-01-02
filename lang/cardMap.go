@@ -50,3 +50,11 @@ func setMap(card1,card2 string,publicCard []string)([]int,int, int){
     bitwise2:=maplook[card2]
 	return bitwise,bitwise1,bitwise2
 }
+func countcard() map[int]int{
+	cards:=getMap()
+	countMap:=make(map[int] int)
+	 for _,v:=range cards{
+       countMap[v]=0
+	 }
+   return countMap
+}

@@ -45,7 +45,7 @@ func (result*Result)calculator(data*DataCard) {
     copycard:=make([]int,len(deck.Cards))
 	copy(copycard,deck.Cards)
 	
-    pre:=float32(1)
+    pre:=float32(100000)
 	for i:=0;i<int(pre);i++{
     deck.shuffle()//洗牌
 	

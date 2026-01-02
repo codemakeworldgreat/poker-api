@@ -23,4 +23,5 @@ func main(){
 	 fmt.Println(count)
 	 
 	 fmt.Println("lose",lose)
+	 fmt.Println(countMap)
 	}
