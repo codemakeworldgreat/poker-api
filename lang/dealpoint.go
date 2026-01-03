@@ -15,7 +15,7 @@ func dealpoint(deck *Deck,player[]*Player)(float32) {
 	 
 	 for i:=0;i<len(player);i++{
           
-         playnumber,playcolor:= bitwise(player[i].Hand[0:7])
+         playnumber,playcolor:= bitwise(player[i].Hand)
 		 
 		 player[i].Color=playcolor
 		 player[i].Number=playnumber

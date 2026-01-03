@@ -21,6 +21,8 @@ func pk (mypoint*Points,player []*Player ) (float32){
   if win ==len(player){
     count++
     return 1
+  }else if tie!=0{
+    return 1/float32(tie)
   }
 return 0
 }

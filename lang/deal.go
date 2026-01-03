@@ -1,6 +1,7 @@
 package main
 
-
+ 
+ 
 func (deck*Deck)deal(player[]* Player,result *Result,  data*DataCard){
     
    for i:=0;i<result.Person;i++{// 对手发牌
@@ -22,9 +23,9 @@ func (deck*Deck)deal(player[]* Player,result *Result,  data*DataCard){
      public:=deck.Hands[2:]
       for i:=0;i<result.Person;i++{
       player[i].Hand=append(player[i].Hand,public...)
-      } 
+     } 
+     
       
-      bug(deck.Hands,player)
  }
 
    
@@ -37,11 +38,11 @@ func (deck*Deck)deal(player[]* Player,result *Result,  data*DataCard){
 func bitwise(hand[] int) ([]int,[]int){
     //取回数字和花色 
       
-      bitnumber:=make([]int,7)
-	  bitcolor:=make([]int,7);
+      bitnumber:=make([]int,0)
+	  bitcolor:=make([]int,0);
 	for i:=0;i<len(hand);i++{
-       bitnumber[i]=hand[i]>>2;
-       bitcolor[i]=hand[i]&3; 
+       bitnumber=append(bitnumber,hand[i]>>2)
+       bitcolor=append(bitcolor,hand[i]&3) 
 	} 
     
    return bitnumber,bitcolor

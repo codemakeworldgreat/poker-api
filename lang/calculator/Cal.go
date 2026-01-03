@@ -1,18 +1,6 @@
-package main
+package  calculator
 import"fmt"
-type Player struct{
-	 Location int
-	 Hand []int
-	 Point int
-     Number []int
-     Color []int
-     Max int
-	 Points Points
- }
- type Deck struct{ //牌组
-	Cards []int
-	Hands []int
- }
+ 
  type Result struct{
     Frequency float32 
 	Players []Player
@@ -21,7 +9,7 @@ type Player struct{
 	
  }
 
-
+ 
 func (result*Result)calculator(data*DataCard) {
 	 
 	 person:=data.Person
@@ -44,6 +32,7 @@ func (result*Result)calculator(data*DataCard) {
     
     copycard:=make([]int,len(deck.Cards))
 	copy(copycard,deck.Cards)
+	 
 	
     pre:=float32(100000)
 	for i:=0;i<int(pre);i++{

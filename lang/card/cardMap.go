@@ -1,4 +1,4 @@
-package main
+package card
 
 import (
 	
@@ -30,26 +30,27 @@ func getMap() map[string]int{
   
    return bitCard
 }
-func setMap(card1,card2 string,publicCard []string)([]int,int, int){
-	
-
-	var bitwise[] int
+func setMap(hands[]string,publicCard []string)([]int,[]int){
+	var flop[] int
+	var hand[]int
 	maplook:=getMap()
+	 for _,v:=range hands{
+		val,ok:=maplook[v]
+	   if ok{
+          hand=append(hand,val)
+	   }   
+	 }
 	if len(publicCard)!=0{
 		for _,v:=range publicCard{
 			val,ok:=maplook[v]
 			if ok{
-			 bitwise=append(bitwise,val)
-			    
-			}else {
-				
-			}
+			 flop=append(flop,val)
+			 }
 		}
-	}
-    bitwise1:=maplook[card1]
-    bitwise2:=maplook[card2]
-	return bitwise,bitwise1,bitwise2
+	}    
+     return hand,flop
 }
+
 func countcard() map[int]int{
 	cards:=getMap()
 	countMap:=make(map[int] int)
