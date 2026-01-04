@@ -1,6 +1,9 @@
 package card
 
-func (deck*DeckCard) delete( pool[]int){
+type DeleteCard interface{
+	Delete(pool []int)
+}
+func (deck*DeckCard) Delete( pool[]int){
 	//删除已知牌
    for i,v:=range deck.Cards{
    for _,j:=range pool{

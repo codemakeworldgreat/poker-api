@@ -3,12 +3,14 @@ package card
 
 type DeckCard struct{
 	Cards [] int
-
+	MapCards map[string]int
 }
 
-func (deck*DeckCard)GetInitial() *DeckCard{ 
+func GetInitial() *DeckCard{ 
 	//52张牌的二进制
-	deck=&DeckCard{Cards:make([]int,52)}
+	deck:=&DeckCard{Cards:make([]int,52),
+		MapCards:make(map[string]int),}
+     deck.getMap()
 	colors:=[]int{0,1,2,3};
 	numbers:=make([]int,13);
 	for i:=2;i<15;i++{

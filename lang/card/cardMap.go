@@ -1,10 +1,11 @@
 package card
+import "strconv"
+type CardsMap interface{
+   SetMap(hand[] string)[]int
+}
 
-import (
-	
-	"strconv"
-	)
-func getMap() map[string]int{
+
+func (d*DeckCard) getMap() {
 	color:=make(map[string]int)
 		color["S"]=0
          color["H"]=1
@@ -20,42 +21,26 @@ func getMap() map[string]int{
 	number["K"]=13
     number["A"]=14
 	
-    bitCard:=make(map[string]int)
+   
 	for n,v:=range number{
     for z,x:=range color{
 		key:=n+z
-	 bitCard[key]= (v<<2)|x
+	 d.MapCards[key]= (v<<2)|x
 	}
 } 
   
-   return bitCard
 }
-func setMap(hands[]string,publicCard []string)([]int,[]int){
-	var flop[] int
-	var hand[]int
-	maplook:=getMap()
+func (d*DeckCard)SetMap(hands[]string)([]int){
+	 
+	var hand[] int
+	maplook:=d.MapCards
 	 for _,v:=range hands{
 		val,ok:=maplook[v]
 	   if ok{
           hand=append(hand,val)
 	   }   
 	 }
-	if len(publicCard)!=0{
-		for _,v:=range publicCard{
-			val,ok:=maplook[v]
-			if ok{
-			 flop=append(flop,val)
-			 }
-		}
-	}    
-     return hand,flop
+   
+     return hand
 }
 
-func countcard() map[int]int{
-	cards:=getMap()
-	countMap:=make(map[int] int)
-	 for _,v:=range cards{
-       countMap[v]=0
-	 }
-   return countMap
-}
