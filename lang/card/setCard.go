@@ -1,26 +1,39 @@
 package card
-
-
-type Playerdetail struct{
+import "fmt"
+type Detail struct{
 	Id int 
 	Hand []int
 	Color [] int
     Number [] int
+    score int
 }
 type Player struct{
-	Players [] Playerdetail
-
+	Index [] Detail
+    Person int
 }
 
-func Setcard(hand[]int,id int,Person int)*Player{
-   player:=&Player{ Players:make([]Playerdetail,Person),   
+func (p*Player)SetHand(hand[]int,id int,person int){
+   p.Person=person
+ for i:=0;i<person;i++{
+   p.Index[i].Id=i
+ }
+ p.Index[id].Hand=hand 
 }
-   player.Players[id].Id=id
-   player.Players[id].Hand=hand
- 
-    for i:=0;i<len(hand);i++{
-      player.Players[id].Color[i]=hand[i]&3
-      player.Players[id].Number[i]=hand[i]>>2
-    }
-   return player
+func (p*Player)DealHand(d*DeckCard, skipId[]int){
+   fmt.Println( len(d.Cards))
+	for i:=0;i<p.Person;i++{
+		skip:=false
+		for _,v:=range skipId{
+			if i==v{
+              skip=true
+			  break
+			}
+		
+		}
+        if skip{
+			continue
+		}
+      next:= d.Send(2)
+	  p.Index[i].Hand=append(p.Index[i].Hand,next...)
+	}
 }

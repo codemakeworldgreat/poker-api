@@ -1,4 +1,4 @@
-module poker
+module pokers
 
 go 1.25.4
 
