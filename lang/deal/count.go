@@ -1,4 +1,4 @@
-package deals
+package  deal
 
 func DealsCount(data[]int,size int)[]int{
    count:=make([]int,size)

@@ -1,4 +1,4 @@
-package deals
+package deal
 func  Bitwise(cards[]int)([]int,[]int){
 	number:=make([]int,len(cards))
     color:=make([]int,len(cards))

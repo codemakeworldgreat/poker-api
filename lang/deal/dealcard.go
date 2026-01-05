@@ -1,9 +1,9 @@
-package deals
+package deal
 
 import (
 	"fmt"
-	"pokers/card"
-	"pokers/deals/dealcolors"
+	"poker/card"
+	
 )
 type CardsValue struct{
 	Id int
@@ -27,7 +27,13 @@ func Dealcard(p *card.Player,flopcard []int){
 	  value[i].Color=append(value[i].Color,deal[j]&3)
 	}
 	fmt.Println(value[i])
-     setcolor:=[]int{0,1,2,0,0,0,1}
-    dealcolors.DealFlush(setcolor)
-	
-}}
+     }
+     test:=[]int{3,1,2,3,3,3,3,3}
+	result:= DealFlush(test)
+    fmt.Println(result)
+	testnumber:=[]int{8,8,13,14,9,6,9}
+	numbercount:=CountNumber(testnumber)
+	fmt.Println(numbercount[14])
+	sort:=sortNumber(value[1].Number)
+	fmt.Println(sort)
+}

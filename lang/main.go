@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"poker/card"
-    "poker/deals"
+    "poker/deal"
 )
 type DataCard struct{
 	Card1 int
@@ -40,6 +40,6 @@ func main(){
 	  tb.SetFlop(data)
 	  fmt.Println(p.Index)
 	  fmt.Println(len(d.Cards))
-	   deals.Dealcard(p,data)
+	   deal.Dealcard(p,data)
 	   
 	}
