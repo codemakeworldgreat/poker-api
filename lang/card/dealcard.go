@@ -14,5 +14,6 @@ func Requestcard(hand[]string,public[]string,person int){
 	player.SetHand(myhand,0)
 	skip:=0
 	player.DealHand(init,skip)
+	fmt.Println(myhand)
     fmt.Println(player)
 }

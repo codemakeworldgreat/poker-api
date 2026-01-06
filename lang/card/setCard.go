@@ -1,5 +1,5 @@
 package card
-
+import "fmt"
 type Detail struct{
 	Id int 
 	Hand []int
@@ -25,18 +25,11 @@ func (p*Player)SetHand(hand[]int,id int){
  p.Index[id].Hand=hand 
 }
 func (p*Player)DealHand(d*DeckCard, skipId int){
-   
+      fmt.Println(skipId)
 	for i:=0;i<p.Person;i++{
-		skip:=false
-		 
-			if i==skipId{
-              skip=true
-			  break
-			}
-        if skip{
-			continue
-		}
+    if i==skipId{continue}       
       next:= d.Send(2)
-	  p.Index[i].Hand=append(p.Index[i].Hand,next...)
-	}
+	  fmt.Println(next)
+	  p.Index[i].Hand=append(p.Index[i].Hand,next...)   
+}
 }
