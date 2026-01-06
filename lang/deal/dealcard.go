@@ -28,12 +28,14 @@ func Dealcard(p *card.Player,flopcard []int){
 	}
 	fmt.Println(value[i])
      }
-     test:=[]int{3,1,2,3,3,3,3,3}
-	result:= DealFlush(test)
-    fmt.Println(result)
+     test:=[]int{3,3,1,3,3,3}
+     list:=[]int{27,39,25,19,15,43}
+	result:= DealFlush(test,list)
+    fmt.Println("花色",result)
 	testnumber:=[]int{8,11,11,14,9,9}
 	numbercount:=CountNumber(testnumber)
 	fmt.Println(numbercount)
-	sort:=sortNumber(value[1].Number)
-	fmt.Println(sort)
+	testnumbers:=[]int{14,8,5,4,3,2}
+	 resultsome:=dealstraight(testnumbers)
+	fmt.Println(resultsome)
 }
