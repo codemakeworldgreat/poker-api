@@ -8,7 +8,7 @@ type DeckCard struct{
 
 func GetInitial() *DeckCard{ 
 	//52张牌的二进制
-	deck:=&DeckCard{Cards:make([]int,52),
+	deck:=&DeckCard{Cards:make([]int,54),
 		MapCards:make(map[string]int),}
      deck.getMap()
 	colors:=[]int{0,1,2,3};

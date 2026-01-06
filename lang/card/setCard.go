@@ -1,5 +1,5 @@
 package card
-import "fmt"
+
 type Detail struct{
 	Id int 
 	Hand []int
@@ -12,24 +12,27 @@ type Player struct{
     Person int
 }
 
-func (p*Player)SetHand(hand[]int,id int,person int){
-   p.Person=person
- for i:=0;i<person;i++{
+func InitPlayer(person int)*Player{
+	player:=&Player{Index:(make([]Detail,person)),
+	Person:person}
+	return player
+}
+func (p*Player)SetHand(hand[]int,id int){
+   
+ for i:=0;i<p.Person;i++{
    p.Index[i].Id=i
  }
  p.Index[id].Hand=hand 
 }
-func (p*Player)DealHand(d*DeckCard, skipId[]int){
-   fmt.Println( len(d.Cards))
+func (p*Player)DealHand(d*DeckCard, skipId int){
+   
 	for i:=0;i<p.Person;i++{
 		skip:=false
-		for _,v:=range skipId{
-			if i==v{
+		 
+			if i==skipId{
               skip=true
 			  break
 			}
-		
-		}
         if skip{
 			continue
 		}
